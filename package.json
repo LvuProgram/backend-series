@@ -11,5 +11,8 @@
     "backend"
   ],
   "author": "shan singh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3"
+  }
 }
