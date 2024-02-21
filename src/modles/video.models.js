@@ -1,12 +1,12 @@
-import mongoose, {Schema} from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import mongooseAggregate from 'mongoose-aggregate';
 
+// Define the video schema using Mongoose
 const videoSchema = new Schema({
-
+    // Video details
     videoFile:{
         type: String,
         required: true,
-
     },
     thumbNail:{
         type: String,
@@ -27,23 +27,20 @@ const videoSchema = new Schema({
     views:{
         type: Number,
         default: 0,
-
     },
     published:{
         type: Boolean,
-       default: true, 
+        default: true, 
     },
+    // Reference to the owner (user) of the video
     owner:{
         type: Schema.Types.ObjectId,
         ref: 'USER'
     }
+}, { timestamps: true })
 
-
-
-
-
-},{timestamps:true})
-
-
+// Use mongoose-aggregate plugin
 videoSchema.plugin(mongooseAggregate);
-export const Video = mongoose.model('Video',videoSchema)
+
+// Export the Mongoose video model
+export const Video = mongoose.model('Video', videoSchema)
