@@ -1,11 +1,11 @@
 import mongoose, { Schema } from 'mongoose';
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';F
 import bcrypt from 'bcrypt';
 
 // Define the user schema using Mongoose
 const userSchema = new Schema(
     {
-        // User details
+        // User details fields
         userName: {
             type: String,
             required: true, 
